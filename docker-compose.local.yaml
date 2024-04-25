@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  postgresql:
+    image: docker.io/bitnami/postgresql:16
+    ports:
+      - '5433:5432'
+    # volumes:
+    #   - 'dreg_postgresql_data:/bitnami/postgresql'
+    environment:
+      - POSTGRESQL_USERNAME=my_user
+      - POSTGRESQL_PASSWORD=password123
+      - POSTGRESQL_DATABASE=bc
+
+  # bigchaindb:
+  #   image: bigchaindb/bigchaindb:all-in-one
+  #   ports:
+  #     - '6379:6379'
+  #     - '9984:9984'
+  #     - '27017:27017'
+  #     - '26657:26657'
+    # volumes:
+    #   - 'bigchaindb_docker/mongodb/data/db:/data/db'
+    #   - 'bigchaindb_docker/mongodb/data/configdb:/data/configdb'
+    #   - 'bigchaindb_docker/tendermint:/tendermint'
